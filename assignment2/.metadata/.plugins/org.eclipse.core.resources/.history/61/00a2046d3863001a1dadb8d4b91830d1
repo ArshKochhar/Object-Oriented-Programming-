@@ -1,0 +1,84 @@
+package guessmaster2;
+
+public class Singer extends Person {
+	
+	//Instance Variables
+		private String debutAlbum;
+		private Date debutAlbumReleaseDate;
+		
+		//Initializing constructors 
+		
+		public Singer(String name, Date dateOfBirth, String gender, String debutAlbum, Date debutAlbumReleaseDate, double difficulty) {
+			super(name, dateOfBirth, gender, difficulty);
+			this.debutAlbum = debutAlbum;
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDate);
+		}
+		
+		public Singer(String name, String dateString, String gender, String debutAlbum, String debutAlbumReleaseDateString, double difficulty) {
+			super(name, dateString, gender, difficulty);
+			this.debutAlbum = debutAlbum;
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDateString);
+		}
+		
+		
+		public Singer(String name, Date dateOfBirth, String gender, String debutAlbum, String debutAlbumReleaseDate, double difficulty) {
+			super(name, dateOfBirth, gender, difficulty);
+			this.debutAlbum = debutAlbum;
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDate);
+		}
+	
+		public Singer(String name, String dateString, String gender, String debutAlbum, Date debutAlbumReleaseDateString, double difficulty) {
+			super(name, dateString, gender, difficulty);
+			this.debutAlbum = debutAlbum;
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDateString);
+		}
+		
+		//Copy-Constructor
+		public Singer(Singer singer) {
+			super(singer);
+			this.debutAlbum = singer.debutAlbum;
+			this.debutAlbumReleaseDate = new Date (singer.debutAlbumReleaseDate);
+		}
+		
+		
+		
+		// Accessors and Mutators for Singer debutAlbum
+		public String getDebutAlbum() {
+			return debutAlbum;
+		}
+		
+		public void setDebutAlbum(String debutAlbum) {
+			this.debutAlbum = debutAlbum;
+		}
+		
+		
+		
+		// Accessors and Mutators for Singer debutAlbumReleaseDate
+		public Date getDebutAlbumReleaseDate() {
+			return new Date (debutAlbumReleaseDate);
+		}
+		public void setDebutAlbumReleaseDate (Date debutAlbumReleaseDate) {
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDate);
+		}
+		public void setDebutAlbumReleaseDate (String debutAlbumReleaseDateString) {
+			this.debutAlbumReleaseDate = new Date (debutAlbumReleaseDateString);
+		}
+		
+		
+		
+		//Abstract Clone method
+		public Singer clone() {
+			return new Singer(this);
+		}
+		//To String function that calls parent class's toString function
+		public String toString() {
+			return super.toString()+"Debut Album: "+getDebutAlbum()+"\nRelease Date: "+getDebutAlbumReleaseDate().toString()+"\n";
+		}
+		//Abstract entityType method. Gives details about the type of derived entity, notice the '!'
+		public String entityType() {
+			return "This entity is a singer!";
+		}
+	
+	
+
+}

@@ -1,0 +1,26 @@
+package lab5;
+
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Collections;
+import java.util.Date;
+
+public class Lab5 {
+	
+	//creating the main method 
+	
+	public static void main (String[] args) {
+		
+		ArrayList<Integer> intArray = new ArrayList<Integer>();
+		Random rand = new Random(); 
+		
+		//add to array list
+		for(int j = 0; j<10; j++) {
+			int nextVal = rand.nextInt(100);
+			intArray.add(nextVal); 
+
+		
+	}
+	
+
+}
